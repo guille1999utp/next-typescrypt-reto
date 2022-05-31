@@ -1,0 +1,15 @@
+.subTitle {
+  margin: 0;
+  color: #0070f3;
+  font-size: 20px;
+  text-align: center;
+}
+
+.select {
+  width: 200px;
+  margin: 0 auto;
+  outline: none;
+  border-radius: 10px;
+  padding: 2px;
+  text-align: center;
+}

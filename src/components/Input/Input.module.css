@@ -1,0 +1,12 @@
+.input__label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input {
+  border-radius: 10px;
+  padding: 3px 10px;
+  border: 1px solid;
+  outline: none;
+}

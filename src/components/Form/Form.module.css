@@ -1,0 +1,32 @@
+.formTitle {
+  color: #0070f3;
+  margin: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 500px;
+  height: 100vh;
+  justify-content: center;
+  gap: 10px;
+}
+
+.formButton {
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 100px;
+  padding: 5px 10px;
+  background-color: #0070f3;
+  border: 1px solid #0070f3;
+  color: #FFF;
+}
+
+.formButton:hover {
+  font-weight: 600;
+  background-color: #FFF;
+  color: #0070f3;
+}
