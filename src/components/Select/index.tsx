@@ -1,12 +1,13 @@
-import React, { Fragment } from 'react'
+import React, { Fragment,useState } from 'react'
 import { useAppContext } from '../../shared'
 import styles from './Select.module.css'
 
 const { subTitle, select } = styles;
 
 export const Select= ( ) => {
-  const { formData, setFormData,  } = useAppContext() || {}
-
+  const { formData, setFormData, fetchSelect,fetchInputs,optionsSelec, setInputs} = useAppContext() || {}
+  const [option, setOption] = useState<string>("");
+  console.log(fetchInputs)
   /**
    * Use una función setState para setaer la opción elegida por el usuario en un estado
    * del contexto de la app. 
@@ -14,12 +15,14 @@ export const Select= ( ) => {
    */
 
   
-  const onChangeHandler = (e: any) => {
-    // Obtenga el valor seleccionado del evento
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setOption(e.currentTarget.value);
   }
   
   // Use un estado proveniente del contexto para renderizar las opciones que se deben mostrar en el select
-
+  const renderSelect = (optionsSelec(option));
+  setInputs(renderSelect);
+ // areggkar ayb
   return (
     <Fragment>
       <h2 className={subTitle}>Elige tu cargo</h2>
@@ -29,10 +32,9 @@ export const Select= ( ) => {
         id="" 
         onChange={onChangeHandler}
       >
-        <option value="Cargo-1">Cargo 1</option>
-        <option value="Cargo-2">Cargo 2</option>
-        <option value="Cargo-3">Cargo 3</option>
-        <option value="Cargo-4">Cargo 4</option>
+        {
+          fetchInputs?.map((data) => <option value={data.position.value}>{data.position.name}</option>)
+        }
       </select>
     </Fragment>
   )
